@@ -1,8 +1,15 @@
 'use strict';
 
 angular.module('casesApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $http.get('/api/awesomeThings').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+  .controller('MainCtrl', ['$scope','$http','casesResource', function ($scope, $http,casesResource) {
+
+    // get token
+    $http.get('/getToken').success(function(sf) {
+        var sfToken = sf.token;
+        // Getting cases
+        var Cases = casesResource.query({token:sfToken},function() {
+            $scope.Cases =Cases;
+        });
+
     });
-  });
+  }]);
