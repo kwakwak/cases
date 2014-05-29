@@ -1,22 +1,21 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
+
 
 <div class="row marketing">
   <div ng-repeat="Case in Cases">
       <h4>{{Case.Name}}</h4>
-      <strong ng-click="remove(case)">Remove</strong>
-
+      <strong ng-click="remove(Case)">Remove</strong> - <strong ng-click="log(Case)">log</strong>
   </div>
+  <br/>
+    <form>
+        <input type="text" ng-model="form.name">
+        <button ng-click="create()">Create</button>
+    </form>
 </div>
 
+
+
 <div class="footer">
-  <p>♥ from the Yeoman team and LupiLup</p>
+  <p>© All rights reserved SHL Telemedicine 2014</p>
 </div>
