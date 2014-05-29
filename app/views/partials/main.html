@@ -3,6 +3,7 @@
 
 
 <div class="row marketing">
+  <strong>{{msg}}</strong>
   <div ng-repeat="Case in Cases">
       <h4>{{Case.Name}}</h4>
       <strong ng-click="remove(Case)">Remove</strong> - <strong ng-click="log(Case)">log</strong>

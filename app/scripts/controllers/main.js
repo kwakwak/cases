@@ -36,11 +36,17 @@ angular.module('casesApp')
                         $scope.Cases.splice(i, 1);
                     }
                 }
-            }else {
-
+            }
+        }, function(res) {
+            if(res.status === 400) {
+                $scope.msg=res.data.msg;
+                $log.error(res.data.msg);
             }
         });
+
     }
+
+
 
 
     // debug - log
